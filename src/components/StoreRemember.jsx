@@ -24,7 +24,6 @@ const StoreRemember = () => {
               <Link className="nav-link" to="/">
                 Home
               </Link>
-              <Nav.Link href="#link">Link</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
