@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./Styles/custom.scss";
 import "./App.css";
 import MainSearch from "./components/MainSearch";
 import CompanySearchResults from "./components/CompanySearchResults";

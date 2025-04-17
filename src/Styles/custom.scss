@@ -1,0 +1,15 @@
+@import "./variables";
+
+$utilities: (
+  "background-color": (
+    property: background-color,
+    class: bg,
+    values: (
+      "tertiary": $tertiary,
+    ),
+  ),
+);
+
+@import "bootstrap/scss/bootstrap";
+
+@import "./main";

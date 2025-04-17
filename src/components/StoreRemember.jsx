@@ -13,7 +13,7 @@ const StoreRemember = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-tertiary">
         <Container>
           <Link className="navbar-brand" to="/">
             Redux-Jobs
