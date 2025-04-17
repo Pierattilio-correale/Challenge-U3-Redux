@@ -3,12 +3,13 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import Job from "./Job";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { addToFavoriteAction } from "../Redux/Action";
 
 const CompanySearchResults = () => {
   const dispatch = useDispatch();
   const [jobs, setJobs] = useState([]);
   const params = useParams();
-
+  const prova = params.company;
   const baseEndpoint =
     "https://strive-benchmark.herokuapp.com/api/jobs?company=";
 
@@ -40,10 +41,7 @@ const CompanySearchResults = () => {
             <Button
               variant="success"
               onClick={() => {
-                dispatch({
-                  type: "ADD_TO_FAVORITE",
-                  payload: params.company,
-                });
+                dispatch(addToFavoriteAction(prova));
               }}
             >
               Add to favorite

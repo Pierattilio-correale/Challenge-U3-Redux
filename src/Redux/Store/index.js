@@ -1,8 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import mainReducer from "../Reducers";
+import fetchArrayReducer from "../Reducers/fetchArray";
+
+const uniqueReducer = combineReducers({
+  company: mainReducer,
+  fetch: fetchArrayReducer,
+});
 
 const store = configureStore({
-  reducer: mainReducer,
+  reducer: uniqueReducer,
 });
 
 export default store;
