@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Col, Form, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Form, Spinner, Alert } from "react-bootstrap";
 import Job from "./Job";
 import { fetchArrayAction } from "../Redux/Action";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,8 +14,9 @@ const MainSearch = () => {
   const spinner = useSelector((state) => {
     return state.fetch.isLoading;
   });
-  const baseEndpoint =
-    "https://strive-benchmark.herokuapp.com/api/jobs?search=";
+  const error = useSelector((state) => {
+    return state.fetch.isError;
+  });
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -48,6 +49,11 @@ const MainSearch = () => {
           ) : (
             <div className="text-center my-5">
               <Spinner animation="border" variant="success" />
+            </div>
+          )}
+          {error && (
+            <div className="my-5">
+              <Alert variant="danger">Errore nella promis</Alert>
             </div>
           )}
         </Col>

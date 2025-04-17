@@ -1,8 +1,13 @@
-import { FETCH_ARRAY_ACTION, FETCH_ARRAY_IS_LOADING } from "../Action";
+import {
+  FETCH_ARRAY_ACTION,
+  FETCH_ARRAY_IS_ERROR,
+  FETCH_ARRAY_IS_LOADING,
+} from "../Action";
 
 const initialState = {
   fetch: [],
   isLoading: false,
+  isError: false,
 };
 
 const fetchArrayReducer = (state = initialState, action) => {
@@ -20,6 +25,12 @@ const fetchArrayReducer = (state = initialState, action) => {
         isLoading: false,
       };
 
+    case FETCH_ARRAY_IS_ERROR:
+      return {
+        ...state,
+        isError: true,
+        isLoading: false,
+      };
     default:
       return state;
   }
